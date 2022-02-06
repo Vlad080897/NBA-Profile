@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/panenco-test/static/css/main.cd3051b2.css",
+    "main.js": "/panenco-test/static/js/main.1b54ad62.js",
+    "index.html": "/panenco-test/index.html",
+    "main.cd3051b2.css.map": "/panenco-test/static/css/main.cd3051b2.css.map",
+    "main.1b54ad62.js.map": "/panenco-test/static/js/main.1b54ad62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd3051b2.css",
+    "static/js/main.1b54ad62.js"
+  ]
+}
