@@ -1,0 +1,73 @@
+.add-form {
+    display: flex;
+    flex-basis: 20%;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0px 1px 4px rgba(20, 20, 30, 0.05), 0px 2px 10px rgba(20, 20, 30, 0.05);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.add-form>div:not(:nth-child(4)) {
+    margin-right: 1rem;
+}
+
+.add-form div:nth-child(4)>div {
+    margin-right: 1rem;
+}
+
+.add-form div span {
+    color: #757575;
+    font-size: 0.8rem;
+}
+
+.set-input {
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+    height: 2rem;
+
+}
+
+.set-input:focus-visible {
+    outline: none;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.error-city {
+    color: red;
+    font-size: 0.8rem;
+}
+
+
+
+.add-btn {
+    position: relative;
+    top: 1.3rem;
+    text-align: center;
+    height: fit-content;
+    background-color: #652AD3;
+    color: white;
+    height: 2rem;
+    border-radius: 4px;
+}
+
+@media (max-width: 1230px) {
+    .add-form {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .set-input {
+        width: 100%;
+    }
+
+    .add-btn {
+        top: 0.5rem;
+    }
+
+    .add-form div:nth-child(4) {
+        width: 100%;
+    }
+}
