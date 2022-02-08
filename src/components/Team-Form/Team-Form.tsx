@@ -64,7 +64,7 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
                   className={errors.name && touched.name ? 'set-input error' : 'set-input'}
                   validate={teamValidate}
                 />
-                {errors.name && touched.name && <div className="error-city">{errors.name}</div>}
+                {errors.name && touched.name && <div className="error-validate">{errors.name}</div>}
               </div>
               <div>
                 <span>City</span>
@@ -76,7 +76,7 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
                   className={errors.city && touched.city ? 'set-input error' : 'set-input'}
                   validate={validateCity}
                 />
-                {errors.city && touched.city && <div className="error-city">{errors.city}</div>}
+                {errors.city && touched.city && <div className="error-validate">{errors.city}</div>}
               </div>
               <div>
                 <span>Abbreviation</span>
@@ -90,7 +90,7 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
                   onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e)}
                 />
                 {touched.abbreviation && !inputValue
-                  && <div className="error-city">Field is required</div>}
+                  && <div className="error-validate">Field is required</div>}
               </div>
               <div>
                 <span>Conference</span>

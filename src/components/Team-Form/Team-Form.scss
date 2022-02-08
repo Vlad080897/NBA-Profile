@@ -1,3 +1,4 @@
+$error_color: red;
 .add-form {
     display: flex;
     flex-basis: 20%;
@@ -33,11 +34,11 @@
 }
 
 .error {
-    border: 2px solid red;
+    border: 2px solid $error_color;
 }
 
-.error-city {
-    color: red;
+.error-validate {
+    color: $error_color;
     font-size: 0.8rem;
 }
 
