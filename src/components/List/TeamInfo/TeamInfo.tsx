@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
-import './Team-info.css';
+import './Team-info.scss';
 
 const TeamInfo: React.FC<TeamInfo> = ({
   name,

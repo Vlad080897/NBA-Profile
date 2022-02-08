@@ -6,7 +6,7 @@ import {
 import React, { CSSProperties, useState } from 'react';
 import Select, { StylesConfig } from 'react-select';
 import { teamValidate, validateCity } from '../utilits/validators';
-import './Team-Form.css';
+import './Team-Form.scss';
 
 const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
   const [inputValue, setInputValue] = useState<string>('');

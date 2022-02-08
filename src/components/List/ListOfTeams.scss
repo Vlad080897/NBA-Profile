@@ -1,0 +1,80 @@
+table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.team-info {
+    display: flex;
+    border-bottom: 1px solid #BDBDBD;
+
+    td {
+        display: flex;
+        width: 9rem;
+        height: 2.5rem;
+
+        &:nth-child(1) {
+            margin-left: 1rem;
+        }
+
+        &:nth-child(4) span {
+            width: 3.5rem;
+            text-align: center;
+            border-radius: 21px;
+        }
+    }
+}
+
+.east {
+    background-color: #DAF5EE;
+    color: #1FAD87;
+}
+
+.west {
+    background-color: #FFEAE3;
+    color: #E64A18;
+}
+
+.team-info td span {
+    margin: auto 0;
+}
+
+.main-row {
+    display: flex;
+    background-color: #EDE6FB;
+    border-radius: 6px;
+
+    td {
+        display: flex;
+        width: 9rem;
+        height: 3rem;
+
+        &:nth-child(1) {
+            margin-left: 1rem;
+        }
+
+        span {
+            margin: auto 0;
+            color: black;
+            font-weight: bold;
+        }
+
+        &.small-abrevitation {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 630px) {
+    .main-row td {
+        &.big-abbrevitation {
+            display: none;
+        }
+
+        &.small-abrevitation {
+            display: flex;
+        }
+    }
+}

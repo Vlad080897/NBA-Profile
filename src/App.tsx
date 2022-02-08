@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import ListOfTeams from './components/List/ListOfTeams';
 import { ListOfPlayers } from './components/Players/ListOfPlayers';
 import SearchForm, { IValuesFormType } from './components/Team-Form/Team-Form';

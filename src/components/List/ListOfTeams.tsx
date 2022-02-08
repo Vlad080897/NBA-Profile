@@ -2,7 +2,7 @@ import { Pagination } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { getTeamsAPI } from '../../api/teams';
 import { TeamType } from '../../types/types';
-import './ListOfTeams.css';
+import './ListOfTeams.scss';
 import TeamInfo from './TeamInfo/TeamInfo';
 
 const ListOfTeams: React.FC<IListProps> = ({ teams, setTeams }) => {

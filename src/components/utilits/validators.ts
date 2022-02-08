@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 export const validateCity = (value: string) => {
   if (!value) return 'Field is required';
   let errorMassage;

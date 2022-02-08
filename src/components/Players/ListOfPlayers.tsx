@@ -1,11 +1,9 @@
-/* eslint-disable no-debugger */
-/* eslint-disable arrow-body-style */
 import { Pagination } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { getPlayersAPI } from '../../api/players';
 import { TypePlayers } from '../../types/types';
 import { Player } from './Player/Player';
-import './Player/Player.css';
+import './Player/Player.scss';
 
 export const ListOfPlayers = () => {
   const [players, setPlayers] = useState<Array<TypePlayers>>([]);

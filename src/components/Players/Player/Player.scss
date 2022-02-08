@@ -1,0 +1,49 @@
+.player-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    div {
+        flex-basis: 23%;
+        margin: 0.3rem 0.3rem 0 0;
+    }
+}
+
+.player-box {
+    display: flex;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0px 3px 8px rgba(20, 20, 30, 0.05), 0px 6px 15px rgba(20, 20, 30, 0.05);
+    border-radius: 24px;
+    padding: 0.8rem 1rem;
+
+    div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 4rem;
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        font-weight: 600;
+        color: #14141E;
+    }
+}
+
+.player-initials {
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        background-color: #EDE6FB;
+    }
+}
+
+@media (max-width: 850px) {
+    .player-container div {
+        flex-basis: 50%;}
+}
