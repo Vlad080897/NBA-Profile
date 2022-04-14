@@ -5,15 +5,11 @@ import {
 } from 'formik';
 import React, { CSSProperties, useState } from 'react';
 import Select, { StylesConfig } from 'react-select';
-import { teamValidate, validateCity } from '../utilits/validators';
+import * as Yup from 'yup';
 import './Team-Form.scss';
 
 const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
-  const [inputValue, setInputValue] = useState<string>('');
   const [confrence, setConference] = useState<OptionsType | null>(null);
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setInputValue((e.currentTarget.value).toUpperCase());
-  };
   const options: Array<OptionsType> = [
     { value: 'East', label: 'East' },
     { value: 'West', label: 'West' },
@@ -29,6 +25,20 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
       ...customControlStyles,
     }),
   };
+
+  const validationSchema = Yup.object().shape({
+    name: Yup
+      .string()
+      .required('Field is required'),
+    city: Yup
+      .string()
+      .matches(/^[a-zA-Zа-щьюяґєіїА-ЩЬЮЯҐЄІЇ\s]+$/g, 'Only letters')
+      .required('Field is required'),
+    abbreviation: Yup
+      .string()
+      .matches(/^[A-ZА-ЩЬЮЯҐЄІЇ\s]+$/g, 'Only uppercase letters')
+      .required('Field is required'),
+  });
   return (
     <div className="form-container">
       <h2>Teams</h2>
@@ -40,16 +50,18 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
           conference: 'East',
           id: 0,
         }}
+        validationSchema={validationSchema}
         onSubmit={(values: IValuesFormType) => {
           const newTeam = {
             id: Math.floor(Math.random() * 10000),
             name: values.name,
             city: values.city,
-            abbreviation: inputValue,
+            abbreviation: values.abbreviation,
             conference: confrence?.value,
           };
           handleAdd(newTeam);
         }}
+
       >
         {({ errors, touched }) => (
           <Form>
@@ -62,7 +74,6 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
                   name="name"
                   placeholder="Team"
                   className={errors.name && touched.name ? 'set-input error' : 'set-input'}
-                  validate={teamValidate}
                 />
                 {errors.name && touched.name && <div className="error-validate">{errors.name}</div>}
               </div>
@@ -74,7 +85,6 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
                   name="city"
                   placeholder="City"
                   className={errors.city && touched.city ? 'set-input error' : 'set-input'}
-                  validate={validateCity}
                 />
                 {errors.city && touched.city && <div className="error-validate">{errors.city}</div>}
               </div>
@@ -84,21 +94,16 @@ const TeamForm: React.FC<ISearchFormProps> = ({ handleAdd }) => {
                 <Field
                   type="text"
                   placeholder="Abbreviation"
-                  className={touched.abbreviation && !inputValue ? 'set-input error' : 'set-input'}
+                  className={touched.abbreviation
+                    && errors.abbreviation ? 'set-input error' : 'set-input'}
                   name="abbreviation"
-                  value={inputValue}
-                  onChange={(e: React.FormEvent<HTMLInputElement>) => handleChange(e)}
                 />
-                {touched.abbreviation && !inputValue
-                  && <div className="error-validate">Field is required</div>}
+                {touched.abbreviation && errors.abbreviation
+                  && <div className="error-validate">{errors.abbreviation}</div>}
               </div>
               <div>
                 <span>Conference</span>
                 <br />
-                {/* <Field as="select" name="conference" className="set-input">
-                  <option value="East">East</option>
-                  <option value="West">West</option>
-                </Field> */}
                 <Select
                   options={options}
                   onChange={setConference}

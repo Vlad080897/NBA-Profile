@@ -24,6 +24,7 @@ export const ListOfPlayers = () => {
       <Player
         firstName={player.first_name}
         lastName={player.last_name}
+        id={player.id}
       />
     </div>
   ));

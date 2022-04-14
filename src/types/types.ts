@@ -17,6 +17,13 @@ export type TypePlayers = {
   weight_pounds: null
 }
 
+export type PlayerType = {
+  first_name: string
+  last_name: string
+  position: string
+  team: TeamType
+}
+
 export type PlayerTeamType = {
   abbreviation: string
   city: string
