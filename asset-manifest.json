@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/panenco-test/static/css/main.4264ced4.css",
-    "main.js": "/panenco-test/static/js/main.f4af5210.js",
-    "static/media/loader.svg": "/panenco-test/static/media/loader.11d62da3b1a309599687674458438796.svg",
-    "index.html": "/panenco-test/index.html",
-    "main.4264ced4.css.map": "/panenco-test/static/css/main.4264ced4.css.map",
-    "main.f4af5210.js.map": "/panenco-test/static/js/main.f4af5210.js.map"
+    "main.css": "/nba-profile/static/css/main.4264ced4.css",
+    "main.js": "/nba-profile/static/js/main.6cb3cb29.js",
+    "static/media/loader.svg": "/nba-profile/static/media/loader.11d62da3b1a309599687674458438796.svg",
+    "index.html": "/nba-profile/index.html",
+    "main.4264ced4.css.map": "/nba-profile/static/css/main.4264ced4.css.map",
+    "main.6cb3cb29.js.map": "/nba-profile/static/js/main.6cb3cb29.js.map"
   },
   "entrypoints": [
     "static/css/main.4264ced4.css",
-    "static/js/main.f4af5210.js"
+    "static/js/main.6cb3cb29.js"
   ]
 }
